@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Debut's System Check
+# --------------------
+# Looking for required programs like lua, ruby, sass, etc.
+
+# Check for Ruby
+if [ $(command -v ruby) ]
+	then
+		RUBY=$(command -v ruby)
+		echo $($RUBY -v)	
+	else
+		echo "NO RUBY PRESENT. Install?"
+fi
+
+# Check for Ruby Gems
+if [ $(command -v gem) ]
+	then
+		GEM=$(command -v gem)
+		echo "Ruby Gems Version: $($GEM -v)"
+	else
+		echo "NO RUBY GEMS PRESENT. Install?"
+fi
+
+# Check for Lua
+if [ $(command -v lua) ]
+	then
+		LUA=$(command -v lua)
+		echo $($LUA -v)
+	else
+		echo "NO LUA PRESENT. Install?"
+fi
+
+# Check for SASS 
+if [ $(command -v sass) ]
+	then
+		SASS=$(command -v sass)
+		echo $($SASS -v)
+	else
+		echo "NO SASS PRESENT. Install?"	
+fi
+
